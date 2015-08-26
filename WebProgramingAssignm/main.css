@@ -1,0 +1,54 @@
+#nav{
+  list-style:none;
+	position:relative;
+	float:left;
+	font-weight:bold;
+}
+
+#nav ul{
+    list-style:none;
+    position:absolute;
+    left:-1000px; 
+}
+
+
+#nav li{
+    position:relative;
+	float:left;
+   
+}
+
+
+#nav a{
+    
+  display:block;
+	text-decoration:none;
+	font-size:14px;
+	padding:5px;
+	white-space:nowrap; 
+
+}
+
+
+#nav li:hover ul{
+  	display:block;
+    left:-38px; 
+    
+
+    }
+    
+#nav li:hover a{ 
+    text-decoration:underline;
+    text-decoration:none;
+    color:green;
+    
+}
+
+a:hover{
+	background-color:yellow;
+}
+
+body{
+		background-color:#E0E0E0;
+
+}
