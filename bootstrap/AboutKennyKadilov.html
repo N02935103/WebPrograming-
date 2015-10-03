@@ -31,16 +31,26 @@
    
 </head>
 <body id="page-top">
-	<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+	
+
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header" class="dropdown">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Kenny Kadilov</a>
             </div>
+            
+          
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
+               <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a class="page-scroll" href="#about">About</a>
                     </li>
@@ -65,33 +75,34 @@
             <div class="header-content-inner">
                 <h3>FRONT-END DEVELOPER - SOFTWARE ENGINEER- USER EXPERIENCE DESIGHNER</h3>
                 <hr>
-                 <p>Hello, I am kenny, I specialize in front-end development, software engineering, and overall user experience!</p>
+                 <p id="about">Hello, I am kenny, I specialize in front-end development, software engineering, and overall user experience!</p>
            </div>
-        </div>
+         </div>  
     </header>
 	
-     <section class="bg-primary" id="about">
+     <section class="bg-primary">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                 	<div class="img">
                 	<img src="img/kenny.jpg" alt="me" class="img-circle" width="140" height="140">
                 	</div>
-                    <h2 class="section-heading">Little bit about me!</h2>
+                    <h2 class="section-heading">About me!</h2>
                     <hr class="light">
                     <p class="text-faded">	To date, I have completed coursework in Java, C++, Object Oriented programing,
 and Computer Architecture. On my own time I looked in to Web programing. I am
-currently a member of teamtreehouse.com which is an online school similar to codeacademy.
+currently a member of <a href="http://teamtreehouse.com">teamtreehouse.com</a> which is an online school similar to codeacademy.
 To date I took HTML, CSS, JavaScript, jQuery, and PHP programing
 Language.</p>
 
  <p class="text-faded">	My academic major at State University of New York at New Paltz is Computer
 Science. I am in my fourth year and will be finishing up courses related to my major
 during this time. I am planning on applying to grad school next year with the hope
-becoming a Professor. Besides taking courses in New Paltz I also took courses on codecademy.com and teamtreehouse.com. I am familiar with allot of online sources
-such as www.w3schools.com, jquery.com, and developer.mozilla.org.</p>
+becoming a Professor. Besides taking courses in New Paltz I also took courses on <a href="http://codecademy.com">codecademy.com</a> and <a href="http://teamtreehouse.com">teamtreehouse.com</a>. I am familiar with allot of online sources
+such as <a href="http://www.w3schools.com">www.w3schools.com</a>,<a href="http://jquery.com">jquery.com</a>, and <a href="http://developer.mozilla.org">developer.mozilla.org</a>.
+</p>
 
-<p class="text-faded">	After finishing this semester I am planning on finding in internship or a job as a
+<p class="text-faded" id="services">	After finishing this semester I am planning on finding in internship or a job as a
 web developer to help pay for college and utilize the skills I learned in this course. There
 is a lot of important topics that are going to be discussed in this course. I am looking
 forward to learning about web programing, importance of Git, and modern programing
@@ -101,7 +112,7 @@ practices such as design of Model View Controller.</p>
         </div>
     </section>
     
-    <section id="services">
+    <section>
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -116,23 +127,24 @@ practices such as design of Model View Controller.</p>
                 <div class="col-lg-5 col-md-6 text-center">
                     <div class="service-box">
                        	<img src="img/1441523639_pdf.png" alt="me" class="img-circle" width="40" height="40">
-                        <h3>Cover letter</h3>
+                       <h3><button type="button" class="btn btn-primary btn-lg">Cover letter</button></h3>
+
                         <p class="text-muted">You can downlode coverr letter here!</p>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6 text-center">
                     <div class="service-box"> 
                         <img src="img/1441523639_pdf.png" alt="me" class="img-circle" width="40" height="40">                     
-                        <h3>Resume</h3>
-                        <p class="text-muted">You can download my resume here!</p>
+                        <h3><button type="button" class="btn btn-primary btn-lg">Resume</button></h3>
+                        <p id="portfolio" class="text-muted">You can download my resume here!</p>
                     </div>
                 </div>
                  </div>
             </div>
-        </div>
+        
     </section>
     
-    <section class="no-padding" id="portfolio">
+    <section class="no-padding">
         <div class="container-fluid">          
             <div class="row no-gutter"> 
             	 <div class="col-lg-12 text-center">
@@ -184,7 +196,9 @@ practices such as design of Model View Controller.</p>
                         </div>
                     </a>
                 </div>
-                
+                </div>
+                </div>
+          </section>     
        <hr>
        <section id="contact">
         <div class="container">
@@ -195,28 +209,24 @@ practices such as design of Model View Controller.</p>
                     <p>Ready to start your next project with me? That's great! Give me a call or send me an email and I will get back to you as soon as possible!</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
-                    <i class="fa fa-phone fa-3x wow bounceIn"></i>
                     <p>123-456-6789</p>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:your-email@your-domain.com">kennykadilov@mail.com</a></p>
+                    <p><a href="mailto:your-email@your-domain.com">kennykadilov@gmail.com</a></p>
                 </div>
             </div>
         </div>
     </section>
     
-    
+  <footer>
+  	<p>Posted by: Kenny Kadilov</p>
+ 	 <p>&copy; Copyright 2015 All rights reserved.</p>
+  </footer>
+
+  
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/jquery.fittext.js"></script>
-    <script src="js/wow.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
 </body>	

@@ -19,6 +19,8 @@ header {
     text-shadow: 2px 2px 4px #000000;
     background-image: url(img/workspace.jpg);
     background-position: center;
+    background-repeat: no-repeat;
+    background-position: center center; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -91,5 +93,14 @@ div.img {
 #contact{
 	
 	clear:both;
+}
+
+footer{
+	text-align:center;
+	margin:0;
+}
+
+footer p{
+	font-size:60%;
 }
 
