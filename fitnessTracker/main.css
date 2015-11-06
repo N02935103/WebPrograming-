@@ -311,5 +311,65 @@ timeline>li .timeline-image1 {
               
 }
 
+#successStories img{
+	border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+
+
+#contact{
+background-color:orange;	
+background-image:url(img/sb-backround.png);
+background-position:center;
+background-repeat:no-repeat;
+
+
+}
+
+section#contact .form-group {
+margin-bottom:25px;
+}
+
+section#contact .form-group input,section#contact .form-group textarea {
+padding:20px;
+}
+
+section#contact .form-group input.form-control {
+height:auto;
+}
+
+section#contact .form-group textarea.form-control {
+height:236px;
+}
+
+section#contact .form-control:focus {
+box-shadow:none;
+border-color:#fed136;
+}
+
+section#contact .text-danger {
+color:#e74c3c;
+}
+
+footer {
+		text-align:center;
+		padding:2px;
+		background-color: #E5F2FF;
+}
+
+footer a{
+	color: orange;
+}
+
+footer a:hover{
+	color:#0066FF
+;
+}
+
+
+
 
 
