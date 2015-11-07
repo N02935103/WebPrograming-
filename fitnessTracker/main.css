@@ -21,7 +21,7 @@
 
 .carousel-3 {
   height: 100%;
-  background: url(img/yoga940.jpg)  no-repeat center top fixed;
+  background: url(img/bkrimg3.jpg)  no-repeat center top fixed;
   -webkit-background-size: cover;
   background-size: cover;
 }
@@ -43,6 +43,23 @@ h1,h2,h3,h4,h5,h6 {
 }
 .img-centered {
 	margin:0 auto
+}
+
+.logginButton{
+	 background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+           font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-transform:uppercase;
+	font-weight:700;
+            
+}
+
+
+.logginButton:hover{
+	color:orange;
 }
 
 

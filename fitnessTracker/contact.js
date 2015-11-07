@@ -1,6 +1,6 @@
 $(function() {
 
-    $("input,textarea").({
+    $("input,textarea").jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
@@ -18,7 +18,8 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url:"email.php"
+                url: "././mail/contact_me.php",
+                type: "POST",
                 data: {
                     name: name,
                     phone: phone,
@@ -49,7 +50,6 @@ $(function() {
                     //clear all fields
                     $('#contactForm').trigger("reset");
                 },
-               
             });
         },
         filter: function() {
