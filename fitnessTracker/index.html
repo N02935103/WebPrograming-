@@ -100,67 +100,193 @@
 
 				<a class="carousel-caption">
 				<div class="btn-group">
-					<button type="button" class="btn btn-info btn-lg" aria-haspopup="true" aria-expanded="false">
+					<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" aria-haspopup="true" aria-expanded="false">
 						<span class="fa fa-envelope" aria-hidden="true"></span>
-						<button type="button" class="btn btn-info btn-lg">
+						<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">
 							Sign  up  with  Email
 						</button>
 					</button>
 				</div>
 				<div class="btn-group">
-					<button type="button" class="btn btn-primary btn-lg" aria-haspopup="true" aria-expanded="false">
+					<button type="button" class="btn btn-primary btn-lg" data-toggle="buttons-radio" aria-haspopup="true" aria-expanded="false">
 						<span class="fa fa-facebook" aria-hidden="true"></span>
-						<button type="button" class="btn btn-primary btn-lg">
+						<button type="button" data-toggle="buttons-radio" class="btn btn-primary btn-lg">
 							Sign up with Facebook
 						</button>
 					</button>
-				</div> <h3>Already a member? <button class="logginButton"  data-toggle="modal" data-target="#loginModal">Login here</button></h3>
+
+				</div> <h3>Already a member?
+				<button class="logginButton"  data-toggle="modal" data-target="#loginModal">
+					Login here
+				</button></h3>
 				<p>
 					Lose weight with Myfitness. The fastest, easiest way to lose weight
 				</p> </a>
 
 			</div><!-- /.carousel -->
-			
+
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
+
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h5 class="modal-title">Sighnup With Email</h5>
+						</div>
+
+					<!-- Modal content-->
+					
+						<div class="modal-body">
+							<form data-toggle="validator" role="form" id="attributeForm" method="post" class="form-horizontal"
+							>
+
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Full name</label>
+									<div class="col-xs-4">
+
+										<input type="text" pattern="^[_A-z]{1,}$" class="form-control" name="firstName" placeholder="First name"
+										data-fv-row=".col-xs-4"
+										data-fv-notempty="true"
+										required data-validation-required-message="The firs name is required and cannot be empty">
+
+									</div>
+
+									<div class="col-xs-4">
+										<input type="text" pattern="^[_A-z]{1,}$" class="form-control" name="lastName" placeholder="Last name"
+										data-fv-row=".col-xs-4"
+										data-fv-notempty="true"
+										required data-validation-required-message="The last name is required and cannot be empty">
+									</div>
+																		
+
+
+								</div>
+								
+								
+
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Email address</label>
+									<div class="col-xs-5">
+										<input type="email" class="form-control" id="inputEmail" placeholder="Email"  required>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+									</div>
+									<div class="col-xs-4">
+
+										<div class="help-block with-errors"></div>
+
+									</div>
+								</div>
+
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Password</label>
+									<div class="col-xs-5">
+										<input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required="The password required and cannot be empty">
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+									</div>
+
+									<div class="col-xs-4">
+
+										<div class="help-block with-errors"></div>
+
+									</div>
+								</div>
+
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Retype password</label>
+									<div class="col-xs-5">
+
+										<input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required="The password required and cannot be empty">
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+									</div>
+									<div class="col-xs-4">
+
+										<div class="help-block with-errors"></div>
+
+									</div>
+
+								</div>
+								
+								<hr>
+								
+								<div class="form-group">
+																		<div class="text-right">
+
+										<div id="success"></div>
+										<button type="submit" class="btn btn-primary">
+											Sighn Up
+										</button>
+										<button type="button" class="btn btn-default" data-dismiss="modal">
+											Cancel
+										</button>
+									</div>
+									</div>
+
+
+						</form>
+
+					</div>
+					
+					</div>
+				</div>
+
+			</div>
+			</div>
+
+			</div>
+
 			<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h5 class="modal-title">Login</h5>
-            </div>
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+							<h5 class="modal-title">Login</h5>
+						</div>
 
-            <div class="modal-body">
-                <!-- The form is placed inside the body of modal -->
-                <form id="loginForm" method="post" class="form-horizontal">
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">Username</label>
-                        <div class="col-xs-5">
-                            <input type="text" class="form-control" name="username" />
-                        </div>
-                    </div>
+						<div class="modal-body">
+							<!-- The form is placed inside the body of modal -->
+							<form data-toggle="validator" role="form" class="form-horizontal">
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Username</label>
+									<div class="col-xs-5">
+										<input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" placeholder="Your username" id="username" required>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
-                    <div class="form-group">
-                        <label class="col-xs-3 control-label">Password</label>
-                        <div class="col-xs-5">
-                            <input type="password" class="form-control" name="password" />
-                        </div>
-                    </div>
+									</div>
+								</div>
 
-                    <div class="form-group">
-                        <div class="col-xs-5 col-xs-offset-3">
-                            <button type="submit" class="btn btn-primary">Login</button>
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Password</label>
+									<div class="col-xs-5">
+										<input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required data-validation-required-message="Please enter your password.">
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+										<span class="help-block">Minimum of 6 characters</span>
 
 
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="col-xs-5 col-xs-offset-3">
+										<div id="success"></div>
+										<button type="submit" class="btn btn-primary">
+											Login
+										</button>
+										<button type="button" class="btn btn-default" data-dismiss="modal">
+											Cancel
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 
 		</header>
 
@@ -531,20 +657,16 @@
 
 		</footer>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
-	<script src="jqBootstrapValidation.js"></script>	    
-	<script src="contact.js"></script>
-    <script src="script.js"></script>
-
-
-    
-
+		<script src="jqBootstrapValidation.js"></script>
+		<script src="bootstrapvalidator.js"></script>
+		<script src="contact.js"></script>
+		<script src="script.js"></script>
 
 	</body>
 </html>
