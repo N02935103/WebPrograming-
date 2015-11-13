@@ -29,6 +29,16 @@
 
 .btn-group{
 	padding: 3px;
+	
+}
+
+.btn-group:hover .btn-info{
+	    background-color: #2aabd2;
+    background-position: 0 -15px;
+   }
+
+.form-group button{
+	padding: 3px;
 }
 
 

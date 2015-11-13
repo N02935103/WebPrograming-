@@ -125,7 +125,7 @@
 
 			</div><!-- /.carousel -->
 
-				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog"  aria-hidden="true">
 
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -136,8 +136,8 @@
 							<h5 class="modal-title">Sighnup With Email</h5>
 						</div>
 
-					<!-- Modal content-->
-					
+						<!-- Modal content-->
+
 						<div class="modal-body">
 							<form data-toggle="validator" role="form" id="attributeForm" method="post" class="form-horizontal"
 							>
@@ -159,12 +159,8 @@
 										data-fv-notempty="true"
 										required data-validation-required-message="The last name is required and cannot be empty">
 									</div>
-																		
-
 
 								</div>
-								
-								
 
 								<div class="form-group has-feedback">
 									<label class="col-xs-3 control-label">Email address</label>
@@ -178,6 +174,36 @@
 										<div class="help-block with-errors"></div>
 
 									</div>
+								</div>
+								<hr>
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Username</label>
+									<div class="col-xs-5">
+										<input type="text" data-minlength="6" class="form-control" id="inputUserName " placeholder="Username" required="The username required and cannot be empty">
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+									</div>
+
+									<div class="col-xs-4">
+
+										<div class="help-block with-errors"></div>
+
+									</div>
+								</div>
+
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Retype username</label>
+									<div class="col-xs-5">
+
+										<input type="text" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword" data-match-error="Whoops, these don't match" placeholder="Confirm" required="The username required and cannot be empty">
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+									</div>
+									<div class="col-xs-4">
+
+										<div class="help-block with-errors"></div>
+
+									</div>
+
 								</div>
 
 								<div class="form-group has-feedback">
@@ -210,10 +236,26 @@
 
 								</div>
 								
-								<hr>
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Date</label>
+									<div class="col-xs-5">
+										<input type="date" class="form-control" id="inputdate" placeholder="Date"  required>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+									</div>
+									<div class="col-xs-4">
+
+										<div class="help-block with-errors"></div>
+
+									</div>
+								</div>
+						
 								
+
+								<hr>
+
 								<div class="form-group">
-																		<div class="text-right">
+									<div class="text-right">
 
 										<div id="success"></div>
 										<button type="submit" class="btn btn-primary">
@@ -223,13 +265,12 @@
 											Cancel
 										</button>
 									</div>
-									</div>
+								</div>
 
+							</form>
 
-						</form>
+						</div>
 
-					</div>
-					
 					</div>
 				</div>
 
@@ -266,7 +307,6 @@
 										<input type="password" data-minlength="6" class="form-control" id="inputPassword" placeholder="Password" required data-validation-required-message="Please enter your password.">
 										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 										<span class="help-block">Minimum of 6 characters</span>
-
 
 									</div>
 								</div>
@@ -651,7 +691,6 @@
 					</li>
 				</ul>
 			</div>
-			</div>
 			<br>
 			<br>
 
@@ -663,10 +702,10 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
 
-		<script src="jqBootstrapValidation.js"></script>
-		<script src="bootstrapvalidator.js"></script>
-		<script src="contact.js"></script>
-		<script src="script.js"></script>
+		<script src="js/jqBootstrapValidation.js"></script>
+		<script src="js/bootstrapvalidator.js"></script>
+		<script src="js/contact.js"></script>
+		<script src="js/script.js"></script>
 
 	</body>
 </html>
