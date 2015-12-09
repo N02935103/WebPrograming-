@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Basic Bootstrap Site</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+				<center>
+				<h1>Profile</h1>
+				</center>
+				<div class="row">
+				<div class="dropdown pull-right col-sm-1">
+					<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"></span>Settings <span class="glyphicon glyphicon-cog"></button>
+					<ul class="dropdown-menu">
+						<li><a href="#">Profile <span class="glyphicon glyphicon-user"></span></a></li>
+						<li><a href="#">Account Options <span class="glyphicon glyphicon-edit"></span></a></li>
+						<li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 text-center">
+					<img class="img-responsive" src="media/unknow_profile_picture.png" height="800" width="800">
+					<ul class="pagination">
+						<li><a href="#">1</a></li>
+						<li class="#"><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+					</ul>
+				</div>
+				<div class="col-sm-8">
+					<form class="form-horizontal" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="fname">First Name:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="fname" placeholder="First Name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="fname">Last Name:</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" id="fname" placeholder="Last Name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="fname">Birthday:</label>
+							<div class="col-sm-8">
+								<input type="date" class="form-control" id="bday" placeholder="XX/XX/XXXX">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="email">Email:</label>
+							<div class="col-sm-8">
+								<input type="email" class="form-control" id="email" placeholder="example@email.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="control-label col-sm-2" for="password">Password:</label>
+							<div class="col-sm-8">
+								<input type="password" class="form-control" id="password">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-2 col-sm-10">
+								<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+								<button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4">
+					
+				</div>
+				<div class="col-sm-8">
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#week">This Week</a></li>
+						<li><a data-toggle="tab" href="#month"><span class="label label-primary">This Month</span></a></li>
+						<li><a data-toggle="tab" href="#year">This Year <span class="badge">1</span></a></li>
+					</ul>
+					<div class="tab-content">
+						<div id="week" class="tab-pane fade in active">
+							 <div class="progress">
+								<div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+								</div>
+							</div>
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Day</th>
+										<th>Miles</th>
+										<th>Minutes</th>
+										<th>Laps</th>
+									</tr>
+								</thead>
+								<tr>
+									<td>Monday</td>
+									<td>0</td>
+									<td>10</td>
+									<td>15</td>
+								</tr>
+								<tr>
+									<td>Tuesday</td>
+									<td>5</td>
+									<td>45</td>
+									<td>5</td>
+								</tr>
+								<tr>
+									<td>Wednesday</td>
+									<td>3</td>
+									<td>20</td>
+									<td>25</td>
+								</tr>
+								<tr>
+									<td>Thursday</td>
+									<td>2</td>
+									<td>40</td>
+									<td>8</td>
+								</tr>
+							</table>
+									
+										
+						</div>
+						<div id="month" class="tab-pane fade">
+							<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Week</th>
+										<th>Miles</th>
+										<th>Minutes</th>
+										<th>Laps</th>
+									</tr>
+								</thead>
+								<tr>
+									<td>1</td>
+									<td>0</td>
+									<td>10</td>
+									<td>15</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>5</td>
+									<td>45</td>
+									<td>5</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>3</td>
+									<td>20</td>
+									<td>25</td>
+								</tr>
+								<tr>
+									<td>4</td>
+									<td>2</td>
+									<td>40</td>
+									<td>8</td>
+								</tr>
+							</table>
+									
+										
+						</div>
+						<div id="year" class="tab-pane fade">
+								<div class="alert alert-success">
+									<strong>Good Job!</strong> Keep it up.
+								</div>
+								<table class="table table-bordered">
+								<thead>
+									<tr>
+										<th>Month</th>
+										<th>Miles</th>
+										<th>Minutes</th>
+										<th>Laps</th>
+									</tr>
+								</thead>
+								<tr>
+									<td>January</td>
+									<td>0</td>
+									<td>10</td>
+									<td>15</td>
+								</tr>
+								<tr>
+									<td>February</td>
+									<td>5</td>
+									<td>45</td>
+									<td>5</td>
+								</tr>
+								<tr>
+									<td>March</td>
+									<td>3</td>
+									<td>20</td>
+									<td>25</td>
+								</tr>
+							</table>	
+										
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

@@ -1,0 +1,112 @@
+nav{
+	font-size:14px;
+	font-weight:bold;
+}
+
+
+nav ul ul {
+	display: none;
+}
+nav ul li:hover > ul {
+		display: block;
+
+
+
+	}
+	
+nav ul {
+	list-style: none;
+	position:relative;
+	display: inline-table;
+	background: #B8B8B8; 
+	padding:0;
+	border-radius:5px; 
+
+
+	
+
+
+}
+
+nav ul:after {
+		content: ""; clear: both; display: block;
+	}
+
+nav ul li{
+	float:left;
+
+
+}
+
+nav ul li a {
+		display: block; 
+		padding:7px;
+		text-decoration: none;
+
+
+	}
+	
+
+nav ul ul {
+	 position: absolute; 
+	 padding:0px;
+	 background:gray;
+}
+
+nav ul ul li {
+		float: none; 
+		position: relative;
+		border-top:1px solid #909090;
+		background:#C8C8C8;
+	
+	}
+	
+	
+	nav ul ul li a {
+			padding: 7px;
+			color: green;
+		}	
+			nav ul ul li a:hover {
+				background: yellow;
+			}
+
+nav ul li:hover {
+			background:#888; 	
+	
+
+		
+}
+
+div{
+	background-color#C0C0C0;
+	border-radius: 10px;  
+
+}
+
+body{
+	background-color:#C0C0C0;
+
+}
+
+h1{
+	text-align:center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+     margin-left: -100px;
+
+}
+
+h1:after{
+	content: 'WELCOME TO WEBPROGRAMING!';
+    display: block;
+    position: absolute;
+    bottom: -.63em; 
+    left: 0;
+    right: 0;
+    opacity: .4;
+    -webkit-transform: scaleY(-1);
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+}

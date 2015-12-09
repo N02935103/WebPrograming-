@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang=en>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fitness > Home</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="/style/style.css">
+	</head>
+	
+	<body ng-app='app' ng-controller="meal as vm">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="">Fitness</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a>
+						<li><a href="exercise.html">Exercise</a></li>
+						<li><a href="meal.html">Meals</a></li>
+					</ul>
+					<ul class="nav navbar-nav pull-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="glyphicon glyphicon-cog"></span></a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="">Profile <span class="glyphicon glyphicon-user"></span></a></li>
+								<li><a href="">Account Options <span class="glyphicon glyphicon-edit"></span></a></li>
+								<li class="divider"></li>
+								<li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+        <mp-alert ></mp-alert>
+        <mp-panel title="vm.panel.title" body="vm.panel.body" confirm="vm.panel.confirm()"></mp-panel>
+        <div ng-include="'index-tmpl'" ></div>
+
+    </div>
+    <!--Asdfasdf-->
+    <div class="modal fade" id="#myDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form-horizontal" >
+                    <div class="modal-header">
+                        <a href="?" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>
+                        <h4 class="modal-title" ></h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <a href="?" class="btn btn-default" data-dismiss="modal" >Close </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myDialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form class="form-horizontal" >
+                    <div class="modal-header">
+                        <a href="?" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>
+                        <h4 class="modal-title" ></h4>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                    <div class="modal-footer">
+                        <a href="?" class="btn btn-default" data-dismiss="modal" >Close </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--asdfdfd-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular.min.js"></script>
+    <script type="text/javascript" src="directives/alert.js"></script>
+    <script type="text/javascript" src="directives/panel.js"></script>
+    <script type="text/javascript">angular.module('app',['mplotkin.directives']);</script>
+    <script type="text/javascript" src="mealService.js"></script>
+    <script type="text/javascript">
+        
+        angular.module('app')
+        .controller('meal', function($http, mealService){
+            var self = this;
+            
+            mealService.get()
+            .success(function(data){
+                self.rows = data;
+            });
+            
+            self.create = function(){
+                var a = $('#newMeal').serializeArray();
+                var row={};
+                $.each(a, function() {
+                    if (row[this.name] !== undefined) {
+                        if (!row[this.name].push) {
+                            row[this.name] = [row[this.name]];
+                        }
+                        row[this.name].push(this.value || '');
+                    }
+                    else {
+                        row[this.name] = this.value || '';
+                    }
+                });
+                location.reload();
+            };
+            self.edit = function(row, index){
+                row.isEditing = true;
+            };
+            self.save = function(row, index){
+                mealService.post(row)
+                .success(function(data){
+                    data.isEditing = false;
+                    self.rows[index] = data;
+                }).error(function(data){
+                    alert(data.code);
+                });
+            };
+            self.delete = function(row, index){
+                self.panel = {
+                    title: "Delete a meal",
+                    body: "Are you sure you want to delete " + row.mealname + "?",
+                    confirm: function(){
+                        mealService.delete(row.id)
+                        .success(function(data){
+                            self.rows.splice(index, 1);
+                            $("#myDialog").modal('hide');
+                        }).error(function(data){
+                            alert(data.code);
+                        });
+                    }
+                };
+            };
+            function alert(msg){
+                self.msg = {
+                    type: 'alert-danger',
+                    body: msg
+                };
+            }
+            
+        });
+        
+    </script>
+    <script type="text/ng-template" id="index-tmpl" >
+        <div class="container">
+            <div class="row">
+            	<div class="col-md-7">
+            		<div class="cardbg">
+                        <table class="table table-bordered">
+                        	<thead>
+                        		<tr>
+                        			<th>Meal</th>
+                        			<th>Date</th>
+                        			<th>Calories</th>
+                        		</tr>
+                            <tr ng-repeat="row in vm.rows">
+                                <td ng-if-start="!row.isEditing">{{row.mealname}}</td>
+                                <td>{{row.date}}</td>
+                                <td>{{row.calories}}</td>
+                                <td ng-if-end>
+                             	    <a ng-click="vm.edit(row,$index)" title="Edit" class="btn btn-primary btn-xs edit"><i class="glyphicon glyphicon-edit"></i></a>
+                              		<a ng-click="vm.view(row, $index)" title="View" class="btn btn-info btn-xs view"><i class="glyphicon glyphicon-eye-open"></i></a>
+                              		<a ng-click="vm.delete(row, $index)" title="Delete" class="btn btn-danger btn-xs delete"><i class="glyphicon glyphicon-minus"></i></a>
+                             	</td>
+                         	</th>
+                         	<td ng-if-start="row.isEditing"><input type="text" name="name" class="form-control" placeholder="Name" ng-model="row.mealname" /></td>
+                            <td><input type="text" name="date" class="form-control" placeholder="Date" ng-model="row.date" /></td>
+                            <td><input type="text" name="calories" class="form-control" placeholder="Calories" ng-model="row.calories" /></td>
+                            <td ng-if-end><input type="button" value="Submit" class="btn btn-primary submit" ng-click="vm.save(row, $index)"/>
+                            </td>
+                            </tr>
+                        </table>
+            	    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="cardbg">
+                    	<h3 class="text-center">Add Meal</h3>
+                		<form id='newMeal' class="form-horizontal">
+                            <div class="form-group">
+                    		    <label class="control-label col-xs-3">Meal:</label>
+                    		    <div class="col-xs-7">
+                        			<select class="form-control" name="mealname">
+                        		    	<option>Breakfast</option>
+                        		      	<option>Lunch</option>
+                        		      	<option>Dinner</option>
+                        		    	<option>Snack</option>
+                        		  	</select>
+                    		    </div>
+                    	    </div>
+                            <div class="form-group">
+                    		    <label class="control-label col-xs-3">Calories:</label>
+                		        <div class='col-xs-7'>
+                			        <input type="number" name="calories" class="form-control" placeholder="Calories" ng-model="row.calories" />
+                		        </div>
+                	       </div>
+                        	<div class="form-group">
+                        			<label class="control-label col-xs-3">Date:</label>
+                        			<div class="col-xs-7">
+                        				<input type="date" name="date" class="form-control" placeholder="Date" ng-model="row.date" />
+                        			</div>
+                        		</div>
+                    	    <div class="form-group">
+                                <div class='col-xs-offset-3 col-xs-9'>
+                                     <button type="button" class="btn btn-primary" ng-click="vm.create()"><small><span class="glyphicon glyphicon-plus"></small> Add Meal</button>
+                        		</div>
+                        	</div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='test'></div>
+    </script>
+  </body>
+</html>

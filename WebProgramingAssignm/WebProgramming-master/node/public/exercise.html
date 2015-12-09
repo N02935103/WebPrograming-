@@ -1,0 +1,230 @@
+<html lang=en>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Fitness > Home</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="/style/style.css">
+
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="">Fitness</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a>
+						<li><a href="exercise.html">Exercise</a></li>
+						<li><a href="meal.html">Meals</a></li>
+					</ul>
+					<ul class="nav navbar-nav pull-right">
+						<li class="dropdown">
+							<a class="dropdown-toggle" data-toggle="dropdown" href="#">Settings <span class="glyphicon glyphicon-cog"></span></a>
+							<ul class="dropdown-menu dropdown-menu-right">
+								<li><a href="">Profile <span class="glyphicon glyphicon-user"></span></a></li>
+								<li><a href="">Account Options <span class="glyphicon glyphicon-edit"></span></a></li>
+								<li class="divider"></li>
+								<li><a href="#">Sign Out <span class="glyphicon glyphicon-log-out"></span></a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+            <div id="view"></div>
+
+    </div>
+
+    <div class="modal fade" id="myDialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+        <form class="form-horizontal" >
+          <div class="modal-header">
+            <a href="?" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></a>
+            <h4 class="modal-title" ></h4>
+          </div>
+        	<div class="modal-body">
+        	</div>
+        	<div class="modal-footer">
+        		<a href="?" class="btn btn-default" data-dismiss="modal" >Cancel </a>
+        		<input type="submit" name="submit" class="btn btn-primary submit" value="Save changes" />
+        	</div>
+        </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-animate.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var editTemplate = Handlebars.compile($("#edit-tmpl").html());
+            var indexTemplate = Handlebars.compile($("#index-tmpl").html());
+
+            $.getJSON("/exercise").then(function(data){
+                    var html = indexTemplate({rows: data});
+                    $("#view").html(html);
+            });
+
+            $("#view").on("click", ".view", function(){
+                $.get(this.href).then(function(data){
+                    $("#myDialog .modal-title").html("<center>View Exercise</center>");
+                    $("#myDialog .modal-body").html("<h4>Exercise: "
+                    + data.exercisename + "</h4><h5>"+data.date+"</h5><h5>"
+                    + data.calories+"</h5><h5>"
+                    + data.minutes
+                    );
+                    $("#myDialog .modal-footer").html('<a href="?" class="btn btn-default" data-dismiss="modal" >Close</a>');
+                    
+                    $("#myDialog").modal('show');
+                });
+                return false;
+            });
+            $("#view").on("click", ".create", function(){
+                $.ajax({ url: '/exercise', type: 'POST', data: $("#addMeal input,select").serialize() })
+                .done(function(){
+                    location.reload();
+                })
+            });
+            $("#view").on("click", ".edit", function(){
+                var $self = $(this);
+                $.getJSON(this.href).then(function(data){
+                    var html = editTemplate(data);
+                    var $tr = $self.closest("tr").after(html).hide();
+                    $tr.next().find(".submit").one('click', function(){
+                        $.ajax({ url: '/exercise/', type: 'POST', data: $tr.next().find("input,select").serialize() })
+                        .done(function(data){
+                            location.reload();
+                        }).fail(function(data){
+                            alert(data.responseJSON.code);
+                        });
+                        return false;
+                    });
+                });
+                return false;
+            });
+            $("#view").on("click", ".delete", function(){
+                $self = $(this);
+                $.get(this.href).then(function(data){
+                    $("#myDialog .modal-title").html("Delete a meal");
+                    $("#myDialog .modal-body").html("<h5>Are you sure you want to delete " + data.Name + "?</h5>");
+                    $("#myDialog .submit").one('click', function(){
+                        $.ajax({ url: '/exercise/' + data.id, type: 'DELETE'})
+                        .done(function(data){
+                            $self.closest('tr').remove();
+                            $("#myDialog").modal('hide');
+                        }).fail(function(data){
+                            alert(data.responseJSON.code);
+                        });
+                        return false;
+                    });
+                    $("#myDialog").modal('show');
+                });
+                return false;
+            });
+        });
+    </script>
+    <script type="text/template" id="edit-tmpl" >
+        <tr>
+            <td>
+    			<select class="form-control" name="exercisename">
+    		    	<option >Running</option>
+    		      	<option >Swimming</option>
+    		      	<option >Climbing</option>
+    		    	<option >Weight Lifting</option>
+    		  	</select>
+            </td>
+           <td><input type="date" name="date" class="form-control" placeholder="date" value="{{date}}" /></td>
+           <td><input type="number" name="calories" class="form-control" placeholder="calories" value="{{calories}}" /></td>
+           <td><input type="number" name="minutes" class="form-control" placeholder="minutes" value="{{minutes}}"/></td>           
+           <td>
+             <input type="submit" value="Update" class="btn btn-primary submit"/>
+             <input type="hidden" name="id" value="{{id}}" />
+           </td>
+        </tr>
+    </script>
+    <script type="text/template" id="index-tmpl" >
+        <div class="container">
+            <div class="row">
+            	<div class="col-md-7">
+            		<div class="cardbg">
+                        <table class="table table-bordered">
+                        	<thead>
+                        		<tr>
+                        			<th>Exercise</th>
+                        			<th>Date</th>
+                        			<th>Calories</th>
+                        			<th>Minutes</th>
+                        		</tr>
+                        	</thead>
+                            {{#each rows}}
+                                <tr>
+                                    <td>{{exercisename}}</td>
+                                    <td>{{date}}</td>
+                                    <td>{{calories}}</td>
+                                    <td>{{minutes}}</td>
+                                    <td>
+                         				<a href="/exercise/{{id}}" title="Edit" class="btn btn-primary btn-xs edit"><i class="glyphicon glyphicon-edit"></i></a>
+                          				<a href="/exercise/{{id}}" title="View" class="btn btn-info btn-xs view"><i class="glyphicon glyphicon-eye-open"></i></a>
+                          				<a href="/exercise/{{id}}" title="Delete" class="btn btn-danger btn-xs delete"><i class="glyphicon glyphicon-minus"></i></a>
+                         			</td>
+                                </tr>
+                            {{/each}}
+                        </table>
+            	    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="cardbg">
+                    	<h3 class="text-center">Add Meal</h3>
+                		<div id="addMeal">
+                    		<form class="form-horizontal">
+                                <div class="form-group">
+                        		    <label class="control-label col-xs-3">Exercises:</label>
+                        		    <div class="col-xs-7">
+                            			<select class="form-control" name="exercisename">
+                            		    	<option >Running</option>
+                            		      	<option >Swimming</option>
+                            		      	<option >Climbing</option>
+                            		    	<option >Weight Lifting</option>
+                            		  	</select>
+                        		    </div>
+                        	    </div>
+                                <div class="form-group">
+                        		    <label class="control-label col-xs-3">Calories:</label>
+                    		        <div class='col-xs-7'>
+                    			        <input type="number" name="calories" class="form-control" placeholder="Calories" value"" />
+                    		        </div>
+                    	       </div>
+                            	<div class="form-group">
+                            			<label class="control-label col-xs-3">Date:</label>
+                            			<div class="col-xs-7">
+                            				<input type="date" name="date" class="form-control" placeholder="Date" value="" />
+                            			</div>
+                            		</div>
+                            	<div class="form-group">
+                            			<label class="control-label col-xs-3">Minutes:</label>
+                            			<div class="col-xs-7">
+                            				<input type="number" name="minutes" class="form-control" placeholder="Minutes" value="" />
+                            			</div>
+                            		</div>
+                        	    <div class="form-group">
+                                    <div class='col-xs-offset-3 col-xs-9'>
+                                        <button type="button" class="btn btn-primary create"><small><span class="glyphicon glyphicon-plus"></small> Add Exercise</button>
+                            		</div>
+                            	</div>
+                            </form>
+                        </div>
+                    </div>
+            	</div>
+            </div>
+        </div>
+    </script>
+  </body>
+</html>

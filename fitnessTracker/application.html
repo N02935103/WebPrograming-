@@ -2,19 +2,16 @@
 <html ng-app="LogApp">
 	<head>
 		<meta charset="utf-8">
-		<title>AJAX Flickr Photo Search</title>
+		<title>APP</title>
 		<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+		
 
 		<!-- Bootstrap -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-social.min.css">
-		<link rel="stylesheet" href="application.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.10.1/bootstrap-social.min.css">
 
-		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="js/app.js"></script>
+		<link rel="stylesheet" href="application.css">
 
 	</head>
 	<body>
@@ -43,7 +40,7 @@
 						</li>
 
 						<li>
-							<a class="page-scroll" href="#contact">Log Out</a>
+							<a class="page-scroll" href="index.html">Log out</a>
 						</li>
 					</ul>
 				</div>
@@ -53,27 +50,29 @@
 		</nav>
 
 		<hr>
-		
+
 		<header>
 			<div class="headerimage">
 				<div class="container text-center">
 
 					<div class="row">
 						<div class="col-lg-12">
-							<h2>Food</h2>
-							<p>
-								<a href="#" class="btn btn-squared-default btn-primary"> <i class= "fa fa-cutlery fa-5x"></i>
+							<h2>Keep a food journal<br/> of food you eat.<br/> Search our Database and food recipes. </h2>
+							<p class="gradient">
+							
+								<a href="#" class="btn btn-squared-default btn-primary active hover"> <i class= "fa fa-cutlery fa-5x selected"></i>
 								<br/>
-								Food 
+								Food
 								<br/>
 								Intake </a>
-								<a href="#" class="btn btn-squared-default btn-success"> <i class="fa fa-bicycle fa-5x"></i>
+							
+								<a href="aplicationexersize.html" class="btn btn-squared-default btn-success"> <i class="fa fa-bicycle fa-5x"></i>
 								<br/>
-								Exersize
+								Exercise
 								<br/>
 								Done </a>
 
-								<a href="#" class="btn btn-squared-default btn-info"> <i class="fa fa-user fa-5x"></i>
+								<a href="aplicationProfile.html" class="btn btn-squared-default btn-info"> <i class="fa fa-user fa-5x"></i>
 								<br/>
 								Profile
 								<br/>
@@ -85,259 +84,226 @@
 			</div>
 
 		</header>
-<div class="text-center">
-		<h2>Food Log</h2>
-		<hr class="light">
+		<div class="text-center">
+			<h2>Food Log</h2>
+			<hr class="light">
 		</div>
 
-		<section id="app">
-					
+		<section id="app" ng-controller="LogListController as logList" ng-init="fnInit()">
+
 			<div class="col-md-8 text-center">
 				<hr class="light">
 			</div>
-			
-			<div class="col-md-8 text-center ">
-				
-				
-				<div ng-controller="LogListController as todoList">
-					<div class="panel-group">
-						<div class="panel panel-primary">
-							<div class="panel-heading">
-								<span>{{todoList.remaining()}} of {{todoList.todos.length}} selected do you wish to </span>
-								 <button type="button" class="btn btn-danger"  ng-click="todoList.archive()">Delete</button>
-							</div>
-							<div class="panel-body">
-								<ul class="unstyled">
-									<li ng-repeat="todo in todoList.todos">
-										<input ng-model="log.selected"type="checkbox">
-										<label class="editing lable">{{log.name}}</label>
-										<input class="editing lable" type="text" placeholder="Meal name" />
-										<label class="editing lable">{{log.calories}}</label>
-										<input class="editing lable" type="number" placeholder="calories" />
-										<label class="editing lable">{{log.calories}}</label>
-										<input class="editing lable" type="datetime" placeholder="date" />
-
-										<button type="button" ng-click="save" class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-floppy-o"></i>
-
-										</button>
-										<button type="button" ng-click="delete"  class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-trash-o"></i>
-										</button>
-										<button type="button" ng-click="editing = !editing" class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-pencil-square-o"></i>
-										</button>
-									</li>
-								</ul>
-								
-							   <button type="button" class="btn btn-warning" ng-click="todoList.addTodo()">+ Another Row</button>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<div class="col-md-8 text-center">
 
-
-
-
-					<div ng-controller="TodoListController as todoList">
-						<div class="panel-group">
-							<div class="panel panel-primary">
-								<div class="panel-heading">
-
-									<form data-toggle="validator" role="form" class="form-horizontal"  ng-controller="ExampleController">
-
-										<div class="container">
-											<div class="col-lg-8 text-center">
-												<h2>Search Database</h2>
-											</div>
-											<div class="row">
-												<div class="col-md-8 text-center">
-
-													<div id="custom-search-input">
-														<div class="input-group col-md-12 text-center">
-															<input type="text" class="form-control input-lg" placeholder="Food Name" />
-															<span class="input-group-btn">
-																<button class="btn btn-info btn-lg" type="button">
-																	<i class="glyphicon glyphicon-search"></i>
-																</button> </span>
-														</div>
-													</div>
-
-												</div>
-											</div>
-										</div>
-
-										<div class="container">
-											<div class="row">
-												<div class="col-md-8 text-center">
-													<div id="custom-search-input">
-
-														<div class="input-group col-md-12 text-center">
-															<input type="date" class="form-control input-lg"
-															uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate"
-															datepicker-options="dateOptions" date-disabled="disabled(date, mode)"  />
-
-															<span class="input-group-btn">
-																<button class="btn btn-info btn-lg" type="button">
-																	<i class="glyphicon glyphicon-calendar"></i>
-																</button> </span>
-														</div>
-
-													</div>
-
-												</div>
-											</div>
-										</div>
-
-										<button type="submit" class="btn btn-warning" >
-											Submit
-										</button>
-										<button type="button" class="btn btn-default" data-dismiss="modal">
-											Reset
-										</button>
-
-									</form>
-
-								</div>
-								<div class="panel-body">
-
-									<form data-toggle="validator" role="form" class="form-horizontal"  ng-controller="ExampleController">
-
-										<div class="form-group has-feedback">
-											<label class="col-xs-3 control-label"></label>
-											<div class="col-xs-5">
-												<h3>Manual Entry For Food Log</h3>
-											</div>
-										</div>
-
-										<div class="form-group has-feedback">
-											<label class="col-xs-3 control-label">Meal</label>
-											<div class="col-xs-5">
-												<input type="text" pattern="^[_A-z]{1,}$" maxlength="15" class="form-control" placeholder="Meal name" id="username" required>
-												<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-
-											</div>
-										</div>
-
-										<div class="form-group has-feedback">
-											<label class="col-xs-3 control-label">Calories</label>
-											<div class="col-xs-5">
-												<input type="number" pattern="^0-9]{1,}$"  ng-model="example.value" class="form-control" placeholder="Calories" id="username" required>
-												<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-
-											</div>
-										</div>
-
-										<div class="form-group has-feedback">
-											<label class="col-xs-3 control-label">Date</label>
-											<div class="col-xs-5">
-												<input type="date" class="form-control"
-												uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate"
-												datepicker-options="dateOptions" date-disabled="disabled(date, mode)"  />
-
-											</div>
-										</div>
-
-										<div class="form-group">
-											<div class="col-xs-5 col-xs-offset-3">
-												<div id="success"></div>
-												<button type="submit" class="btn btn-warning" >
-													Submit
-												</button>
-												<button type="button" class="btn btn-default" data-dismiss="modal">
-													Reset
-												</button>
-											</div>
-
-									</form>
-
-								</div>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-				
-				<div ng-controller="LogListController as todoList">
+				<div >
 					<div class="panel-group">
 						<div class="panel panel-primary">
 							<div class="panel-heading">
-								<span>{{todoList.remaining()}} of {{todoList.todos.length}} selected do you wish to </span>
-								 <button type="button" class="btn btn-danger"  ng-click="todoList.archive()">Delete</button>
+								
+								
+								<form data-toggle="validator" role="form" class="form-horizontal">
+
+									<div class="container">
+										<div class="col-lg-8 text-center">
+											<h2>Search Database</h2>
+										</div>
+										<div class="row">
+											<div class="col-md-8 text-center">
+
+												<div id="custom-search-input">
+													<div class="input-group col-md-12 text-center">
+														
+														<input name="log_name" id="log_name" type="text"
+														placeholder="Meal Name"
+														ng-model="search_food"
+														typeahead="suggestion as suggestion.log_name for suggestion in food | filter:$viewValue | limitTo:3"
+														class="form-control input-lg" required>
+
+														<span class="input-group-btn">
+															<button class="btn btn-warning btn-lg"
+															type="button">
+																<i class="glyphicon glyphicon-search"></i>
+															</button> </span>
+													</div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+									<div class="container">
+										<div class="row">
+											<div class="col-md-8 text-center">
+												<div id="custom-search-input">
+
+													<div class="input-group col-md-12 text-center">
+														<input type="date"
+														class="form-control input-lg"
+														datetime-picker="MM-dd-yyyy"
+														ng-model="search_date"
+														is-open="isOpenCalSearch"
+														enable-time='false'
+
+														required>
+
+														<span class="input-group-btn">
+															<button class="btn btn-warning btn-lg"
+															ng-click="openCalendarSearch($event, 'isOpenCalSearch')"
+															type="button">
+																<i class="glyphicon glyphicon-calendar"></i>
+															</button> </span>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</div>
+									<!-- <div class="form-group">
+										<div class="col-xs-12 col-xs-offset-1">
+
+											<div class="form-group"> -->
+												<div id="success"></div>
+												<button type="submit" ng-click="fnAddFromSearch()" class="btn btn-warning" >
+													Submit
+												</button>
+												<button type="button" ng-click="fnResetSearch()" class="btn btn-default">
+													Reset
+												</button>
+											<!-- </div>
+										</div>
+									</div> -->
+									
+									
+								</form>
+								
+								
+
 							</div>
 							<div class="panel-body">
+
+								<form data-toggle="validator"
+								role="form"
+								class="form-horizontal"  >
+
+									<div class="form-group">
+										<label class="col-xs-3 control-label"></label>
+										<div class="col-xs-5">
+											<h3>Manual Entry For Food Log</h3>
+										</div>
+									</div>
+
+									<div class="form-group" ng-class="{'has-error':frmAddLog.log_name.$invalid}">
+										<label class="col-xs-3 control-label">Meal</label>
+										<div class="col-xs-5">
+											<input type="text" pattern="^[_A-z]{1,}$"
+											maxlength="15" class="form-control"
+											placeholder="Meal name"
+											ng-model="log_name"
+											name='log_name' required>
+											<span ng-show="frmAddLog.log_name.$error.required"
+											class="help-block"> </span>
+
+										</div>
+									</div>
+
+									<div class="form-group" ng-class="{'has-error':frmAddLog.log_name.$invalid}">
+										<label class="col-xs-3 control-label">Calories</label>
+										<div class="col-xs-5">
+											<input type="number"
+											ng-model="calories"
+											name='calories'
+											class="form-control"
+											placeholder="Calories"
+											id="calories" required>
+
+											<span ng-show="frmAddLog.calories.$error.required"
+											class="help-block"> </span>
+										</div>
+									</div>
+
+									<div class="form-group " ng-class="{'has-error':frmAddLog.date_added.$invalid}">
+										<label class="col-xs-3 control-label">Date</label>
+										<div class="col-xs-5">
+											<p class="input-group">
+												<input type="date"
+												class="form-control"
+												datetime-picker="MM-dd-yyyy"
+												ng-model="date_added"
+												enable-time="false"
+												name='date_added'
+												is-open="isOpen" required />
+												<span class="input-group-btn">
+													<button type="button" class="btn btn-warning"
+													ng-click="openCalendar($event, 'isOpen')">
+														<i class="fa fa-calendar"></i>
+													</button> </span>
+											</p>
+											<span ng-show="frmAddLog.date_added.$error.required"
+											class="help-block"> </span>
+										</div>
+									</div>
+
+									<div class="form-group">
+										<div class="col-xs-5 col-xs-offset-3">
+											<div id="success"></div>
+											<button type="submit" ng-click="fnAddLog()" class="btn btn-warning" >
+												Submit
+											</button>
+											<button type="button" class="btn btn-default" ng-click="fnResetFoodSubmit()">
+												Reset
+											</button>
+										</div>
+
+								</form>
 								
-								<div class="container">
-        <div class="col-md-8 text-center">  
-  <table class="table table-striped">
-    <thead>
-     
-    </thead>
-    <tbody>
-      <tr>
-        <td>										<input ng-model="log.selected"type="checkbox">
-</td>
-        <td><label class="editing lable">{{log.name}}</label>
-										<input class="editing lable" type="text" placeholder="Meal name" />
-										<l</td>
-        <td><label class="editing lable">{{log.calories}}</label>
-										<input class="editing lable" type="number" placeholder="calories" />
-									</td>
-        <td><label class="editing lable">{{log.date}}</label>
-										<input class="editing lable" type="datetime" placeholder="date" />
-</td>
-
- <td><button type="button" ng-click="save" class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-floppy-o"></i>
-
-										</button>
-										<button type="button" ng-click="delete"  class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-trash-o"></i>
-										</button>
-										<button type="button" ng-click="editing = !editing" class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-pencil-square-o"></i>
-										</button>
-</td>
-
-      </tr>
-   
-  
-    </tbody>
-  </table>
-</div>
-
-								<ul class="unstyled">
-									<li ng-repeat="todo in todoList.todos">
-										<input ng-model="log.selected"type="checkbox">
-										<label class="editing lable">{{log.name}}</label>
-										<input class="editing lable" type="text" placeholder="Meal name" />
-										<label class="editing lable">{{log.calories}}</label>
-										<input class="editing lable" type="number" placeholder="calories" />
-										<label class="editing lable">{{log.date}}</label>
-										<input class="editing lable" type="datetime" placeholder="date" />
-
-										<button type="button" ng-click="save" class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-floppy-o"></i>
-
-										</button>
-										<button type="button" ng-click="delete"  class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-trash-o"></i>
-										</button>
-										<button type="button" ng-click="editing = !editing" class="btn btn-default" aria-label="Left Align">
-											<i class="fa fa-pencil-square-o"></i>
-										</button>
-									</li>
-								</ul>
 								
-								
-								
-							   <button type="button" class="btn btn-warning" ng-click="todoList.addTodo()">+ Another Row</button>
 
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div >
+				<div class="panel-group">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<span>{{selected.length}} of {{db.logListData.length}} selected do you wish to </span>
+							<button type="button" class="btn btn-danger"  ng-click="fnDeleteSelected()">
+								Delete
+							</button>
+						</div>
+						<div class="panel-body">
+
+							<div class="container">
+								<div class="col-md-8 text-center">
+									<table class="table table-striped">
+										<thead>
+
+										</thead>
+										<tbody>
+											<tr class="item" ng-repeat="log in db.logListData"
+											ng-class="{'editing-item': editing, 'edited': log.edited, 'completed': log.completed}"
+											ng-include="getTemplateUI(log)"
+											>
+
+											</tr>
+											
+											
+
+										</tbody>
+										
+										
+									</table>
+									<button type="button" class="btn btn-warning" ng-click="fnAddRow()">+ Another Row</button>
+
+
+								</div>
 							</div>
 						</div>
 					</div>
@@ -345,105 +311,176 @@
 			</div>
 
 		</section>
-		
-		<section class="no-padding">
-        <div class="container-fluid">          
-            <div class="row no-gutter"> 
-            	 <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Food Recipes</h2>
-                    <hr class="primary">
-                </div> 
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/coming-soon.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/coming-soon.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-4 col-sm-6">
-                    <a href="#" class="portfolio-box">
-                        <img src="img/coming-soon.jpg" class="img-responsive" alt="">
-                        <div class="portfolio-box-caption">
-                            <div class="portfolio-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Category
-                                </div>
-                                <div class="project-name">
-                                    Project Name
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                </div>
-                </div>
-          </section>     
 
-		<script src="vender/angular.js" type="text/javascript"></script>
+		<section class="no-padding">
+
+			<div class="container-fluid">
+				<div class="row no-gutter">
+					<div class="col-lg-12 text-center">
+						<h2 class="section-heading">Food Recipes</h2>
+						<hr class="primary">
+					</div>
+
+					<div class="row">
+						<div class="col-md-12 text-center">
+
+							<div id="custom-search-input">
+								<div class="input-group col-md-12 text-center">
+									<input type="text" class="form-control input-lg" placeholder="Food Recipies" />
+									<span class="input-group-btn">
+										<button class="btn btn-warning btn-lg" type="button">
+											<i class="glyphicon glyphicon-search"></i>
+										</button> </span>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="col-lg-4 col-sm-6">
+						<a href="#" class="portfolio-box"> <img src="img/coming-soon.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div> </a>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<a href="#" class="portfolio-box"> <img src="img/coming-soon.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div> </a>
+					</div>
+					<div class="col-lg-4 col-sm-6">
+						<a href="#" class="portfolio-box"> <img src="img/coming-soon.jpg" class="img-responsive" alt="">
+						<div class="portfolio-box-caption">
+							<div class="portfolio-box-caption-content">
+								<div class="project-category text-faded">
+									Category
+								</div>
+								<div class="project-name">
+									Project Name
+								</div>
+							</div>
+						</div> </a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script type="text/ng-template" id="displayPanel">
+			<td>
+			<input ng-click="fnSelectedItem($event,log.id)" ng-model="marked" type="checkbox">
+			</td>
+			<td>{{log.log_name}}</td>
+			<td>{{log.calories}}</td>
+			<td>{{LogAppHelper.fnConvertDate(log.date_added)}}</td>
+			<td>
+			<button type="button" ng-click="fnSaveLog($index,'save')"
+			class="btn btn-success" aria-label="Left Align">
+			<i class="fa fa-floppy-o"></i></button>
+			<button type="button" ng-click="fnDeleteLog($index)"
+			class="btn btn-danger" aria-label="Left Align">
+			<i class="fa fa-trash-o"></i>
+			</button>
+			<button type="button"
+			ng-click="fnEditLog(log)"
+			class="btn btn-info" aria-label="Left Align">
+			<i class="fa fa-pencil-square-o"></i>
+			</button>
+			</td>
+		</script>
+		<script type="text/ng-template"  id="editPanel">
+			<td colspan="2">
+			<input type="text" class="editing lable" placeholder="Meal name" ng-model="db.selected.log_name" />
+			</td>
+			<td>
+			<input class="editing lable" type="text" placeholder="calories" ng-model="db.selected.calories"/>
+			</td>
+			<td>
+			<!--<input type="text" placeholder="Date" ng-model="db.selected.date_added" />-->
+		    <input ng-model="db.selected.date_added" class="editing lable" type="date" placeholder="date" />
+
+			
+			</td>
+			<td>
+			<button type="button" ng-click="fnSaveLog($index,'edit')"
+			class="btn btn-success" aria-label="Left Align">
+			<i class="fa fa-floppy-o"></i></button>
+			<button type="button" ng-click="fnDeleteLog($index)"
+			class="btn btn-danger" aria-label="Left Align">
+			<i class="fa fa-trash-o"></i>
+			</button>
+			<button type="button" ng-click="fnReset($index)"
+			class="btn btn-info" aria-label="Left Align">
+			<i class="fa fa-close"></i>
+			</button>
+
+			</td>
+		</script>
+		
+		<script src="js/angular.min.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/angular-scroll-animate.js"></script>
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script src="js/moment.js" type="text/javascript"></script>
+		<script src="js/ui-bootstrap.tpl.js" type="text/javascript"></script>
+		<script src="js/datetime-picker.js" type="text/javascript"></script>
+		<script src="js/bootstrapvalidator.js"></script>
 		<script src="js/app.js" type="text/javascript"></script>
 	</body>
-	
+
 	<footer>
-			<div class="container">
-				<div class="row">
+		<div class="container">
+			<div class="row">
+				<br>
+				<span class="copyright">Copyright &copy; Myfitness 2015</span>
+				<p>
+					This website is for educational purposes only.
 					<br>
-					<span class="copyright">Copyright &copy; Myfitness 2015</span>
-					<p>
-						This website is for educational purposes only.
-						<br>
-						The content, icons, and images of this website is
-						<br>
-						based on educational material found on various
-						<br>
-						educational websites that is available online.
-					</p>
-					<ul class="list-inline social-buttons">
-						<li>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="fa fa-facebook"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="fa fa-linkedin"></i></a>
-						</li>
-					</ul>
-				</div>
-				<ul class="list-inline quicklinks">
+					The content, icons, and images of this website is
+					<br>
+					based on educational material found on various
+					<br>
+					educational websites that is available online.
+				</p>
+				<ul class="list-inline social-buttons">
 					<li>
-						<a href="#">Privacy Policy</a>
+						<a href="#"><i class="fa fa-twitter"></i></a>
 					</li>
 					<li>
-						<a href="#">Terms of Use</a>
+						<a href="#"><i class="fa fa-facebook"></i></a>
+					</li>
+					<li>
+						<a href="#"><i class="fa fa-linkedin"></i></a>
 					</li>
 				</ul>
 			</div>
-			<br>
-			<br>
+			<ul class="list-inline quicklinks">
+				<li>
+					<a href="#">Privacy Policy</a>
+				</li>
+				<li>
+					<a href="#">Terms of Use</a>
+				</li>
+			</ul>
+		</div>
+		<br>
+		<br>
 
-		</footer>
+	</footer>
 
 </html>

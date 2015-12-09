@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calorie Calculator</title>
+
+	<!-- CSS -->
+	<!-- load bootstrap and custom css -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/paper/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- JS -->
+	<!-- load angular, angular-bootstrap, and custom angular app -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.11.2/ui-bootstrap.min.js"></script>
+	<script src="todo.js"></script>
+</head>
+<body class="container" ng-app="calcApp" ng-controller="mainController">
+
+<pre><code>{{ shitty }}</code></pre>
+
+<form>
+<div class="row">
+<div class="col-sm-6">
+	
+	<h2>Activity Level</h2>
+
+	<div class="btn-group">
+		<label class="btn btn-primary" ng-model="activityType" btn-radio="'sedentary'">Sedentary</label>
+		<label class="btn btn-primary" ng-model="activityType" btn-radio="'Active'">Active</label>
+		<label class="btn btn-primary" ng-model="activityType" btn-radio="'athlete'">Athlete</label>
+	</div>	
+
+	<img src="http://media-cache-ec0.pinimg.com/736x/d7/6b/ea/d76bead82b58b4391868fb33bb47ca23.jpg" class="img-responsive">
+
+</div>
+<div class="col-sm-6">
+	
+	<h2>Info</h2>
+
+	<div class="form-group">
+		<h3>Age</h3>
+		<input type="text" class="form-control" ng-model="info.age" ng-blur="doTheThing(info.age)">
+	</div>
+
+	<div class="form-group">
+		<h3>Gender</h3>
+		<div class="form-group">
+			<div class="btn-group">
+				<label class="btn btn-primary" ng-model="info.gender" btn-radio="'male'">Male</label>
+				<label class="btn btn-primary" ng-model="info.gender" btn-radio="'female'">Female</label>
+			</div>	
+		</div>
+	</div>
+
+	<div class="form-group">
+		<h3>Height</h3>
+
+		<div class="form-group">
+			<div class="btn-group">
+				<label class="btn btn-primary" ng-model="info.heightModifier" btn-radio="'ft'">Feet</label>
+				<label class="btn btn-primary" ng-model="info.heightModifier" btn-radio="'cm'">cm</label>
+			</div>	
+		</div>
+
+
+			<div class="form-group">
+				<label>Feet</label>
+				<input type="text" class="form-control" ng-model="info.height.feet">
+			</div>
+			<div class="form-group">
+				<label>Inches</label>
+				<input type="text" class="form-control" ng-model="info.height.inches">
+			</div>			
+
+
+
+
+<label class="col-xs-3 control-label">Name</label>
+									<div class="col-xs-5">
+										<input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" placeholder="Food Name" id="username" required>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+									</div>
+								</div>
+								
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Calories</label>
+									<div class="col-xs-5">
+										<input type="number" pattern="^[0-9]{1,}$"  class="form-control" placeholder="Your username" id="username" required>
+										<span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
+									</div>
+								</div>
+								
+								<div class="form-group has-feedback">
+									<label class="col-xs-3 control-label">Username</label>
+									<div class="col-xs-5">
+										 <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+									</div>
+								</div>
+    
+    
+    
+    <div class="col-md-6">
+            <p class="input-group">
+              <input type="date" class="form-control" uib-datepicker-popup ng-model="dt" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-d" ><i class="glyphicon glyphicon-calendar"></i></button>               
+              </span>
+            </p>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+</div>
+</div>
+</form>
+	
+</body>
+</html>

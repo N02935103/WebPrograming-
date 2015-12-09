@@ -1,0 +1,4 @@
+<div class="alert" ng-if="vm.msg" ng-class="vm.msg.type">
+    <button ng-click="vm.msg = null" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    {{vm.msg.body}}
+</div>

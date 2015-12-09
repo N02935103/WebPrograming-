@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="wholeword"/>
+		<item value="burger" key="selection"/>
+		<list key="findhistory">
+			<item value="burger"/>
+			<item value="text-right"/>
+			<item value="isOpenTimepickerSearch"/>
+			<item value="food_name"/>
+			<item value="[{&quot;id&quot;:1,&quot;food_name&quot;:&quot;Manggo&quot;,&quot;calories&quot;:306},&#x0A;{&quot;id&quot;:2,&quot;food_name&quot;:&quot;Bread&quot;,&quot;calories&quot;:187},&#x0A;{&quot;id&quot;:3,&quot;food_name&quot;:&quot;Soup&quot;,&quot;calories&quot;:315},&#x0A;{&quot;id&quot;:4,&quot;food_name&quot;:&quot;Jelly Bean&quot;,&quot;calories&quot;:411},&#x0A;{&quot;id&quot;:5,&quot;food_name&quot;:&quot;Chocolate&quot;,&quot;calories&quot;:235}]"/>
+			<item value="&lt;script type=&quot;text/ng-template&quot;  id=&quot;editPanel&quot;&gt;&#x0A;&#x09;&#x09;&#x09;&lt;td colspan=&quot;2&quot;&gt;&#x0A;&#x09;&#x09;&#x09;&lt;input type=&quot;text&quot; class=&quot;editing lable&quot; placeholder=&quot;Meal name&quot; ng-model=&quot;db.selected.meal_name&quot; /&gt;&#x0A;&#x09;&#x09;&#x09;&lt;/td&gt;&#x0A;&#x09;&#x09;&#x09;&lt;td&gt;&#x0A;&#x09;&#x09;&#x09;&lt;input class=&quot;editing lable&quot; type=&quot;text&quot; placeholder=&quot;calories&quot; ng-model=&quot;db.selected.calories&quot;/&gt;&#x0A;&#x09;&#x09;&#x09;&lt;/td&gt;&#x0A;&#x09;&#x09;&#x09;&lt;td&gt;&#x0A;&#x09;&#x09;&#x09;&lt;!--&lt;input type=&quot;text&quot; placeholder=&quot;Date&quot; ng-model=&quot;db.selected.date_added&quot; /&gt;--&gt;&#x0A;&#x09;&#x09;    &lt;input ng-model=&quot;db.selected.date_added&quot; class=&quot;editing lable&quot; type=&quot;date&quot; placeholder=&quot;date&quot; /&gt;&#x0A;&#x0A;&#x09;&#x09;&#x09;&#x0A;&#x09;&#x09;&#x09;&lt;/td&gt;&#x0A;&#x09;&#x09;&#x09;&lt;td&gt;&#x0A;&#x09;&#x09;&#x09;&lt;button type=&quot;button&quot; ng-click=&quot;fnSaveLog($index,&apos;edit&apos;)&quot;&#x0A;&#x09;&#x09;&#x09;class=&quot;btn btn-success&quot; aria-label=&quot;Left Align&quot;&gt;&#x0A;&#x09;&#x09;&#x09;&lt;i class=&quot;fa fa-floppy-o&quot;&gt;&lt;/i&gt;&lt;/button&gt;&#x0A;&#x09;&#x09;&#x09;&lt;button type=&quot;button&quot; ng-click=&quot;fnDeleteLog($index)&quot;&#x0A;&#x09;&#x09;&#x09;class=&quot;btn btn-danger&quot; aria-label=&quot;Left Align&quot;&gt;&#x0A;&#x09;&#x09;&#x09;&lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt;&#x0A;&#x09;&#x09;&#x09;&lt;/button&gt;&#x0A;&#x09;&#x09;&#x09;&lt;button type=&quot;button&quot; ng-click=&quot;fnReset($index)&quot;&#x0A;&#x09;&#x09;&#x09;class=&quot;btn btn-info&quot; aria-label=&quot;Left Align&quot;&gt;&#x0A;&#x09;&#x09;&#x09;&lt;i class=&quot;fa fa-close&quot;&gt;&lt;/i&gt;&#x0A;&#x09;&#x09;&#x09;&lt;/button&gt;&#x0A;&#x0A;&#x09;&#x09;&#x09;&lt;/td&gt;&#x0A;&#x09;&#x09;&lt;/script&gt;"/>
+			<item value="meal_name"/>
+		</list>
+	</section>
+</section>

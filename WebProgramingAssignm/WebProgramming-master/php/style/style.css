@@ -1,0 +1,24 @@
+body{
+	background:#EEFFFF;
+}
+
+.form-control-inline {
+	min-width: 0;
+    width: auto;
+    display: inline;
+}
+.loginarea{
+	width: 450px;
+	
+}
+.cardbg{
+	background:#CCFFFF;
+	border-radius:10px;
+	box-shadow:0px 0px 10px grey;
+	padding:5px 8px 1px 5px;
+	margin:10px 0px 20px 0px;
+}
+.modal-content {
+	padding-top:10px;
+  background-color: #CCFFFF;
+}

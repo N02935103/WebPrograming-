@@ -1,0 +1,53 @@
+<p class="input-group">
+    <input type="text" class="form-control" datetime-picker="yyyy-MM-dd" ng-model="date_added" is-open="isOpen"  />
+    <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="openCalendar($event, prop)"><i class="fa fa-calendar"></i></button>
+    </span>
+</p>
+
+
+
+<div class="col-md-8 text-center">
+						<ul class="timeline">
+							<li>
+								<div class="timeline-image">
+									<img class="img-circle img-responsive" src="img/sb1.jpg" alt="">
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h4>Tarikh</h4>
+										<h4 class="subheading">Food Name</h4>
+									</div>
+									<div class="timeline-body">
+										<p class="text-muted">
+											Calories
+										</p>
+									</div>
+								</div>
+							</li>
+							<li class="timeline-inverted">
+								<div class="timeline-image">
+									<img class="img-circle img-responsive" src="img/sb2.jpg" alt="">
+								</div>
+								<div class="timeline-panel">
+									<div class="timeline-heading">
+										<h4>Tarikh</h4>
+										<h4 class="subheading">Exercise name</h4>
+									</div>
+									<div class="timeline-body">
+										<p class="text-muted">
+											Calories
+										</p>
+									</div>
+									<li class="timeline-inverted">
+								<div class="timeline-image">
+									<h4>Keep up 
+									<br>
+									 The
+									<br>
+									 Good work!</h4>
+								</div>
+							</li>
+                                    
+						</ul>
+					</div>
