@@ -91,9 +91,9 @@ LogApp.controller('LogListController',function($scope,LogAppHelper,LogAppService
         $scope.db={
             logListData:[
                 
-                {id:123,meal_name:'pizza', calories:'500', date_added: today , marked:false},
-                {id:321,meal_name:'burger', calories:'500', date_added: today , marked:false},
-                {id:132,meal_name:'salad', calories:'300', date_added: today , marked:false}
+                {id:123,log_name:'pizza', calories:'500', date_added: today , marked:false},
+                {id:321,log_name:'burger', calories:'500', date_added: today , marked:false},
+                {id:132,log_name:'salad', calories:'300', date_added: today , marked:false}
             ],
             selected: {},
         };
@@ -112,11 +112,10 @@ LogApp.controller('LogListController',function($scope,LogAppHelper,LogAppService
             
             $scope.marked=false;
             $scope.id=Math.random();
-            $scope.date_added="";
             
             var logData={
                 id:$scope.id,
-                meal_name:$scope.meal_name,
+                log_name:$scope.log_name,
                 calories:$scope.calories,
                 date_added:$scope.date_added,
                 marked:$scope.marked
@@ -131,7 +130,7 @@ LogApp.controller('LogListController',function($scope,LogAppHelper,LogAppService
         }
         
          $scope.fnResetFoodSubmit=function(){
-            $scope.meal_name='';
+            $scope.log_name='';
             $scope.calories='';
             $scope.date_added='';
         }
@@ -141,14 +140,14 @@ LogApp.controller('LogListController',function($scope,LogAppHelper,LogAppService
             
            $scope.marked=false;
            $scope.id=Math.random();
-           $scope.meal_name='new meal';
+           $scope.log_name='new meal';
            $scope.calories='new calories';
            $scope.date_added=today;
 
             
             var logData={
                 id:$scope.id,
-                meal_name:$scope.meal_name,
+                log_name:$scope.log_name,
                 calories:$scope.calories,
                 date_added:$scope.date_added,
                 marked:$scope.marked
@@ -256,7 +255,7 @@ LogApp.controller('LogListController',function($scope,LogAppHelper,LogAppService
             
             var logData={
                 id:$scope.search_food.id,
-                meal_name:$scope.search_food.meal_name,
+                log_name:$scope.search_food.log_name,
                 calories:$scope.search_food.calories,
                 date_added:$scope.search_date,
                 marked:$scope.marked
@@ -307,6 +306,8 @@ LogApp.controller('ProfileController',function($scope){
             
         }
         
+        
+        
          $scope.fnAddToTimeline=function(){
         
         console.log('you click the fnAdd');
@@ -330,14 +331,14 @@ LogApp.controller('ProfileController',function($scope){
     /*
     $scope.db={
             logListData:[               
-                {id:123,meal_name:'pizza', calories:'500', date_added: today , marked:false},
-                {id:321,meal_name:'burger', calories:'500', date_added: today , marked:false},
-                {id:132,meal_name:'salad', calories:'300', date_added: today , marked:false}
+                {id:123,log_name:'pizza', calories:'500', date_added: today , marked:false},
+                {id:321,log_name:'burger', calories:'500', date_added: today , marked:false},
+                {id:132,log_name:'salad', calories:'300', date_added: today , marked:false}
             ],
             exerciseData:[              
-                {id:123,meal_name:'pizza', calories:'500', date_added: today , time_added:today ,marked:false},
-                {id:321,meal_name:'burger', calories:'500', date_added: today , time_added:today ,marked:false},
-                {id:132,meal_name:'salad', calories:'300', date_added: today ,time_added:today , marked:false}
+                {id:123,log_name:'pizza', calories:'500', date_added: today , time_added:today ,marked:false},
+                {id:321,log_name:'burger', calories:'500', date_added: today , time_added:today ,marked:false},
+                {id:132,log_name:'salad', calories:'300', date_added: today ,time_added:today , marked:false}
             ],
             selected: {},
     };*/
@@ -416,9 +417,9 @@ LogApp.controller('ExerciseController',function($scope,LogAppHelper,LogAppServic
    $scope.db={
             exerciseData:[
                 
-                {id:123,meal_name:'running', calories:'250', date_added: today  ,marked:false},
-                {id:321,meal_name:'swimming', calories:'300', date_added: today ,marked:false},
-                {id:132,meal_name:'push-up', calories:'150', date_added: today , marked:false}
+                {id:123,log_name:'running', calories:'250', date_added: today  ,marked:false},
+                {id:321,log_name:'swimming', calories:'300', date_added: today ,marked:false},
+                {id:132,log_name:'push-up', calories:'150', date_added: today , marked:false}
             ],
             selected: {},
    };
@@ -429,7 +430,7 @@ LogApp.controller('ExerciseController',function($scope,LogAppHelper,LogAppServic
         console.log('you click the save button..');
         
         var exerData={
-            meal_name:$scope.meal_name,
+            log_name:$scope.log_name,
             calories:$scope.calories,
             date_added:$scope.date_added,
             time_added:$scope.time_added
@@ -458,7 +459,7 @@ LogApp.controller('ExerciseController',function($scope,LogAppHelper,LogAppServic
                 
         var exerData={
                 id:$scope.id,
-                meal_name:$scope.search_food.meal_name,
+                log_name:$scope.search_food.log_name,
                 calories:$scope.search_food.calories,
                 date_added:$scope.search_date,
                 time_added:$scope.search_time,
@@ -479,13 +480,12 @@ LogApp.controller('ExerciseController',function($scope,LogAppHelper,LogAppServic
     $scope.fnAddExercise=function(){
             $scope.marked=false;
             $scope.id=Math.random();
-            $scope.time_added=time_added;
         
         console.log($scope.frmAddExer);
                 
             var exerData={
                 id:$scope.id,
-                meal_name:$scope.meal_name,
+                log_name:$scope.log_name,
                 calories:$scope.calories,
                 date_added:$scope.date_added,
                 time_added:$scope.time_added,
@@ -502,7 +502,7 @@ LogApp.controller('ExerciseController',function($scope,LogAppHelper,LogAppServic
     $scope.fnAddExerciseRow=function(){
             $scope.marked=false;
             $scope.id=Math.random();
-            $scope.meal_name='new exersize';
+            $scope.log_name='new exersize';
            $scope.calories=0;
            $scope.date_added=today;
         
@@ -510,7 +510,7 @@ LogApp.controller('ExerciseController',function($scope,LogAppHelper,LogAppServic
                 
             var exerData={
                 id:$scope.id,
-                meal_name:$scope.meal_name,
+                log_name:$scope.log_name,
                 calories:$scope.calories,
                 date_added:$scope.date_added,
                 marked:$scope.marked
@@ -620,84 +620,6 @@ LogApp.controller('ExerciseController',function($scope,LogAppHelper,LogAppServic
         
     
 });
-
-
-
-LogApp.directive('timeline',function(){
-    return {
-        restrict: 'AE',
-        transclude: true,
-        replace:true,
-        template: '<ul class="timeline" ng-transclude></ul>'
-   };
-    
-});
-    
-LogApp.directive('timelineEvent',function(){
-    
-    return {
-        require: '^timeline',
-        restrict: 'AE',
-        transclude: true,
-        replace:true,
-        template: '<li ng-class-even="\'timeline-inverted\'" ng-transclude></li>'
-  };
-    
-});
-
-LogApp.directive('timelineImage',function(){
-  return {
-    require: '^timelineEvent',
-    restrict: 'AE',
-    transclude: true,
-    template: '<div ng-transclude class="timeline-image"></div>'
-  };  
-});
-
-LogApp.directive('timelinePanel',function(){
-    return {
-        require: '^timeline',
-        restrict: 'AE',
-        transclude: true,
-        replace:true,
-        template: '<div class="timeline-panel" ng-transclude></div>'
-    };
-});
-
-LogApp.directive('timelineFooter', function() {
-  return {
-    require: '^timelinePanel',
-    restrict: 'AE',
-    transclude: true,
-    replace:true,
-    template: '<div class="timeline-footer" ng-transclude></div>'
-  };
-});
-
-LogApp.directive('timelineBody', function() {
-  return {
-    require: '^timelinePanel',
-    restrict: 'AE',
-    transclude: true,
-    replace:true,
-    template: '<div class="timeline-body" ng-transclude></div>'
-  };
-});
-
-LogApp.directive('timelineHeading', function() {
-  return {
-    require: '^timelinePanel',
-    restrict: 'AE',
-    transclude: true,
-    replace:true,
-    template: '<div class="timeline-heading" ng-transclude></div>'
-  };
-});
-
-
-
-
-
 
 
 

@@ -18,6 +18,26 @@
 		
 	</head>
 	<body>
+		
+		<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1665126653768817',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+  
+</script>
 
 		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
@@ -184,7 +204,7 @@
 															</button> </span>
 													</div>
 													
-														<span ng-show="frmAddExer.meal_name.$error.required" 
+														<span ng-show="frmAddExer.log_name.$error.required" 
                                                   class="help-block">
                                                 Start time of exercise
                                             </span>
@@ -219,7 +239,7 @@
 															</button> </span>
 													</div>
 													
-													<span ng-show="frmAddExer.meal_name.$error.required" 
+													<span ng-show="frmAddExer.log_name.$error.required" 
                                                   class="help-block">
                                                 End time of exercise
                                             </span>
@@ -254,13 +274,13 @@
 										</div>
 									</div>
 
-									<div class="form-group" ng-class="{ 'has-error': frmAddExer.meal_name.$invalid }">
+									<div class="form-group" ng-class="{ 'has-error': frmAddExer.log_name.$invalid }">
 										<label class="col-xs-3 control-label">Exercise</label>
 										<div class="col-xs-5">
-											<input type="text" ng-model='meal_name' name='meal_name' pattern="^[_A-z]{1,}$" 
+											<input type="text" ng-model='log_name' name='log_name' pattern="^[_A-z]{1,}$" 
                                                    maxlength="15" class="form-control" 
                                                    placeholder="Exercise name"  required>
-											<span ng-show="frmAddExer.meal_name.$error.required" 
+											<span ng-show="frmAddExer.log_name.$error.required" 
                                                   class="help-block">
                                             </span>
 
@@ -386,6 +406,7 @@
 							</button>
 						</div>
 						<div class="panel-body">
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 
 							<div class="container">
 								<div class="col-md-8 text-center">
@@ -495,7 +516,7 @@
             <td> 
 				<input ng-click="fnSelectedItem($event,exer.id)" ng-model="marked" type="checkbox">
 			</td>
-            <td>{{exer.meal_name}}</td>
+            <td>{{exer.log_name}}</td>
             <td>{{exer.calories}}</td>
             <td>{{LogAppHelper.fnConvertDate(exer.date_added)}}</td>
            
@@ -513,15 +534,15 @@
                         class="btn btn-info" aria-label="Left Align">
 					<i class="fa fa-pencil-square-o"></i>
 				</button>
-            </td>
-            <td>
+           			<td><i class="fa fa-facebook fa-1x" style="background-color: blue; color:white; "></i> <a href="https://developers.facebook.com/docs/plugins/"  target="_blank">Share</a></td> 			
+
             </td>
             <td>
             </td>
         </script>
         <script type="text/ng-template" id="editPanel">
             <td colspan="2">
-                <input type="text" class="form-control" placeholder="Exercise name" ng-model="db.selected.meal_name" />
+                <input type="text" class="form-control" placeholder="Exercise name" ng-model="db.selected.log_name" />
             </td>
             <td>
                 <input type="number" class="form-control" placeholder="Calories" ng-model="db.selected.calories" />

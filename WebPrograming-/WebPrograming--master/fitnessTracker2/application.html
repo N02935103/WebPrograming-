@@ -16,14 +16,25 @@
 	</head>
 	<body>
 		
-		<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1665126653768817";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+		<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1665126653768817',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+  
+</script>
 
 		<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
 			<div class="container-fluid">
@@ -99,8 +110,6 @@
 		</div>
 
 		<section id="app" ng-controller="LogListController as logList" ng-init="fnInit()">
-			
-			
 
 			<div class="col-md-8 text-center">
 				<hr class="light">
@@ -126,10 +135,10 @@
 												<div id="custom-search-input">
 													<div class="input-group col-md-12 text-center">
 														
-														<input name="meal_name" id="meal_name" type="text"
+														<input name="log_name" id="log_name" type="text"
 														placeholder="Meal Name"
 														ng-model="search_food"
-														typeahead="suggestion as suggestion.meal_name for suggestion in food | filter:$viewValue | limitTo:3"
+														typeahead="suggestion as suggestion.log_name for suggestion in food | filter:$viewValue | limitTo:3"
 														class="form-control input-lg" required>
 
 														<span class="input-group-btn">
@@ -206,21 +215,21 @@
 										</div>
 									</div>
 
-									<div class="form-group" ng-class="{'has-error':frmAddLog.meal_name.$invalid}">
+									<div class="form-group" ng-class="{'has-error':frmAddLog.log_name.$invalid}">
 										<label class="col-xs-3 control-label">Meal</label>
 										<div class="col-xs-5">
 											<input type="text" pattern="^[_A-z]{1,}$"
 											maxlength="15" class="form-control"
 											placeholder="Meal name"
-											ng-model="meal_name"
-											name='meal_name' required>
-											<span ng-show="frmAddLog.meal_name.$error.required"
+											ng-model="log_name"
+											name='log_name' required>
+											<span ng-show="frmAddLog.log_name.$error.required"
 											class="help-block"> </span>
 
 										</div>
 									</div>
 
-									<div class="form-group" ng-class="{'has-error':frmAddLog.meal_name.$invalid}">
+									<div class="form-group" ng-class="{'has-error':frmAddLog.log_name.$invalid}">
 										<label class="col-xs-3 control-label">Calories</label>
 										<div class="col-xs-5">
 											<input type="number"
@@ -282,7 +291,9 @@
 
 			<div >
 				<div class="panel-group">
+					
 					<div class="panel panel-primary">
+						
 						<div class="panel-heading">
 							<span>{{selected.length}} of {{db.logListData.length}} selected do you wish to </span>
 							<button type="button" class="btn btn-danger"  ng-click="fnDeleteSelected()">
@@ -290,16 +301,14 @@
 							</button>
 						</div>
 						<div class="panel-body">
-
+<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 							<div class="container">
 								<div class="col-md-8 text-center">
 									<table class="table table-striped">
 										<thead>
 
 										</thead>
-										
 										<tbody>
-											<div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="recommend" data-show-faces="true" data-share="true"></div>
 											<tr class="item" ng-repeat="log in db.logListData"
 											ng-class="{'editing-item': editing, 'edited': log.edited, 'completed': log.completed}"
 											ng-include="getTemplateUI(log)"
@@ -318,7 +327,6 @@
 
 								</div>
 							</div>
-							
 						</div>
 					</div>
 				</div>
@@ -400,7 +408,7 @@
 			<td>
 			<input ng-click="fnSelectedItem($event,log.id)" ng-model="marked" type="checkbox">
 			</td>
-			<td>{{log.meal_name}}</td>
+			<td>{{log.log_name}}</td>
 			<td>{{log.calories}}</td>
 			<td>{{LogAppHelper.fnConvertDate(log.date_added)}}</td>
 			<td>
@@ -417,11 +425,15 @@
 			<i class="fa fa-pencil-square-o"></i>
 			</button>
 			</td>
-			<!-- <td><i class="fa fa-facebook fa-1x" style="background-color: blue; color:white; "></i> <a href="#">Share</a></td> -->			
+			<td><i class="fa fa-facebook fa-1x" style="background-color: blue; color:white; "></i> <a href="https://developers.facebook.com/docs/plugins/"  target="_blank">Share</a></td> 			
+
+			
+			
+			
 		</script>
 		<script type="text/ng-template"  id="editPanel">
 			<td colspan="2">
-			<input type="text" class="editing lable" placeholder="Meal name" ng-model="db.selected.meal_name" />
+			<input type="text" class="editing lable" placeholder="Meal name" ng-model="db.selected.log_name" />
 			</td>
 			<td>
 			<input class="editing lable" type="text" placeholder="calories" ng-model="db.selected.calories"/>
@@ -429,7 +441,8 @@
 			<td>
 			<!--<input type="text" placeholder="Date" ng-model="db.selected.date_added" />-->
 		    <input ng-model="db.selected.date_added" class="editing lable" type="date" placeholder="date" />
-		
+
+			
 			</td>
 			<td>
 			<button type="button" ng-click="fnSaveLog($index,'edit')"
@@ -443,8 +456,8 @@
 			class="btn btn-info" aria-label="Left Align">
 			<i class="fa fa-close"></i>
 			</button>
+
 			</td>
-			
 		</script>
 		
 		<script src="js/angular.min.js" type="text/javascript"></script>
