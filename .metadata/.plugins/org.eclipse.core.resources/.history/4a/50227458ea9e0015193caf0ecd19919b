@@ -307,7 +307,7 @@ LogApp.controller('ProfileController',function($scope,LogAppHelper){
     
     $scope.timelinedb=[
         {type:'food',date_added:today,goal:'My Food Goals',calories:300,specified_goal:'Today I would like to eat more healthy and drink planty of water!',img_url:'img/setting_goals1.jpg' },
-        {type:'exercise',date_added:today,goal:'My Exercise Goals',calories:500,specified_goal:'Today I would like to exercise for 2:00 hrs and drink planty of water!',img_url:'img/setting_goals1.jpg' },
+        {type:'exercise',date_added:today,goal:'My Exer Goals',calories:500,specified_goal:'Today I would like to exercise for 2:00 hrs and drink planty of water!',img_url:'img/setting_goals1.jpg' },
        
     ];
     

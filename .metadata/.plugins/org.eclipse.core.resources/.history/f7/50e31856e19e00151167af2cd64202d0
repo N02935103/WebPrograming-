@@ -306,8 +306,8 @@ LogApp.controller('ProfileController',function($scope,LogAppHelper){
     var today=LogAppHelper.fnConvertDatev2(new Date());
     
     $scope.timelinedb=[
-        {type:'food',date_added:today,goal:'My Food Goals',calories:300,specified_goal:'Today I would like to eat more healthy and drink planty of water!',img_url:'img/setting_goals1.jpg' },
-        {type:'exercise',date_added:today,goal:'My Exercise Goals',calories:500,specified_goal:'Today I would like to exercise for 2:00 hrs and drink planty of water!',img_url:'img/setting_goals1.jpg' },
+        {type:'food',date_added:today,goal:'My Food Goals',calories:300,specified_goal:'Today I would like to eat more healthy and drink planty of water!',img_url:'img/sb1.jpg' },
+        {type:'exercise',date_added:today,goal:'My Exer Goals',calories:500,specified_goal:'Today I would like to exercise for 2:00 hrs and drink planty of water!',img_url:'img/sb2.jpg' },
        
     ];
     
@@ -330,7 +330,7 @@ LogApp.controller('ProfileController',function($scope,LogAppHelper){
             goal:$scope.goal,
             calories:$scope.calories,
             specified_goal:'',
-            img_url:'img/setting_goals1.jpg'
+            img_url:'img/sb1.jpg'
         };
         
         console.log(timelineData);
