@@ -6017,3 +6017,12 @@ Command-line arguments:  -os macosx -ws cocoa -arch x86 -keyring /Users/kennykad
 
 !ENTRY org.eclipse.core.net 1 0 2015-12-10 13:06:37.795
 !MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.aptana.git.core 4 1 2015-12-13 22:20:28.792
+!MESSAGE Errors occurred while refreshing git index
+!SUBENTRY 1 com.aptana.git.core 4 0 2015-12-13 22:20:28.793
+!MESSAGE Failed to acquire lock for git repository.
+!SUBENTRY 1 com.aptana.git.core 4 0 2015-12-13 22:20:28.793
+!MESSAGE Failed to acquire lock for git repository.
+!SUBENTRY 1 com.aptana.git.core 4 0 2015-12-13 22:20:28.793
+!MESSAGE Failed to acquire lock for git repository.
