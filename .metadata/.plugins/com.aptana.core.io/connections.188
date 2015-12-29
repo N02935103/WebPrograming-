@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<connections>
+<connection id="555c63f8-df9e-48ba-bb40-178feada24cf" type="sftp">
+<name>cs.newpaltz.edu</name>
+<host>cs.newpaltz.edu</host>
+<path>/home/kadilovi1</path>
+<login>kadilovi1</login>
+<compression>AUTO</compression>
+</connection>
+<connection id="2aff0dcd-ddfc-4da0-abe9-44c6c37443b7" type="workspace">
+<name>WebPrograming-</name>
+<path>/WebPrograming-</path>
+</connection>
+<connection id="0b048b13-62a0-4c1f-b745-577fbbc6d3bc" type="local">
+<name>/Applications/MAMP/htdocs/WebPrograming-</name>
+<path>/Applications/MAMP/htdocs/WebPrograming-</path>
+</connection>
+<connection id="9493fd2c-96db-40e9-a8ec-8158bdce0ec8" type="workspace">
+<name>AboutMe</name>
+<path>/AboutMe</path>
+</connection>
+</connections>

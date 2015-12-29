@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sites>
+<site>
+<name>WebPrograming- &lt;-&gt; cs.newpaltz.edu</name>
+<source>workspace:/WebPrograming-</source>
+<destination>aptanavfs://555c63f8-df9e-48ba-bb40-178feada24cf/</destination>
+</site>
+<site>
+<name>New Connection</name>
+<source>file:/Applications/MAMP/htdocs/WebPrograming-</source>
+<destination>aptanavfs://555c63f8-df9e-48ba-bb40-178feada24cf/</destination>
+</site>
+<site>
+<name>AboutMe &lt;-&gt; shell.newpaltz.edu</name>
+<source>workspace:/AboutMe</source>
+<destination>aptanavfs://031a8140-2aef-432f-8ad5-09ef18dc0904/</destination>
+</site>
+</sites>

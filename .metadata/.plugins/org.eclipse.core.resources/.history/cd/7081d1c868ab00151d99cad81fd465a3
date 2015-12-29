@@ -1,0 +1,4 @@
+header video{
+  height:300px;
+  width:100%;
+}

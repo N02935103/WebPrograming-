@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>New Paltz Computer Science Club</title>
+
+		<!-- Bootstrap Core CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="js/slick/slick.css">
+        <link rel="stylesheet" href="js/slick/slick-theme.css">
+		<link rel="stylesheet" href="main.css">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+		<!-- Custom Fonts -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
+
+		<!-- Plugin CSS -->
+		<link rel="stylesheet" href="main.css">
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/creative.css" type="text/css">
+	    
+
+
+		<script src="js/widjet.js"></script>
+
+	</head>
+	<body id="page-top">
+
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">New Paltz Computer Science Club</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="#">About</a>
+						</li>
+						<li>
+							<a href="#">Members</a>
+						</li>
+						<li>
+							<a href="#">Link</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">Action</a>
+								</li>
+								<li>
+									<a href="#">Another action</a>
+								</li>
+								<li>
+									<a href="#">Something else here</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">Separated link</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+
+		<header>
+
+			<div class="video-hero">
+				<div class="video-bg demo-video">
+					<!-- <video autoplay muted loop poster="files/office-people-working.jpg">
+					<source src="files/office-people-working.mp4" type="video/mp4">
+					<source src="files/office-people-working.webm" type="video/webm">
+					<source src="files/office-people-working.ogv" type="video/ogg">
+					</video> -->
+				</div>
+				<div class="video-overlay"></div>
+				<div class="page-width">
+					<div class="video-hero--content">
+						<h1>WELCOME TO </h1>
+						<h3>NEW PALTZ COMPUTER SCIENCE CLUB</h3>
+					</div>
+				</div>
+			</div>
+
+		</header>
+		<section id="about">
+			<div class="title text-center">
+				<h1>About Our Club</h1>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<hr>
+					A paragraph of information about when club meats and its hours the goal of the club and so on. Needs to be a paragraph long.
+					So blah blah blah Spectrum is a responsive Bootstrap design framework for one page websites. This theme features a variety of
+					easy to use content sections that you can cut and paste into the framework in whatever way you please! With the number of content sections
+					in this template, there are thousands of options for customization! When you're done, your site will be totally unique!
+				</div>
+
+				<div class="col-xs-12 col-md-8">
+					<h2>Upcomming Events</h2>
+					<hr>
+
+					<h3 class="bold">Name of Events</h3>
+					<h5>Date of event</h5>
+					<p>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					</p>
+					<h3 class="bold">Name of Events</h3>
+
+					<h5>Date of event</h5>
+					<p>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					</p>
+					<h3 class="bold">Name of Events</h3>
+
+					<h5>Date of event</h5>
+					<p>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					</p>
+
+				</div>
+				<div class="col-xs-6 col-md-4">
+					<h2>Members Participation Status</h2>
+					<hr>
+					<p>
+						date meating
+					</p>
+
+					<div id="employeeList"></div>
+				</div>
+			</div>
+
+		</section>
+
+		<section id="members">
+
+			<div class="row">
+				<div class="col-md-6">
+					<h2>About Us</h2>
+					<hr>
+				</div>
+				<div class="col-md-6">
+                        <h2>Our Members</h2>
+                       <hr>
+                        <div class="slides">
+            <div>
+              <img src="img/team-members/team--01.png" alt="" class="avatar" />
+              <h3>Bill Bigsby IV</h3>
+              <p>CEO</p>
+            </div><!--/1-->
+            <div>
+              <img src="img/team-members/team--02.png" alt="" class="avatar"  />
+              <h3>Jane Jewels</h3>
+              <p>CFO</p>
+            </div><!--/2-->
+            <div>
+              <img src="img/team-members/team--03.png" alt="" class="avatar"  />
+              <h3>Doughy Digital</h3>
+              <p>Lead Developer</p>
+            </div><!--/3-->
+            <div>
+              <img src="img/team-members/team--04.png" alt="" class="avatar"  />
+              <h3>Ralph Raider</h3>
+              <p>Lead Designer</p>
+            </div><!--/4-->
+            <div>
+              <img src="img/team-members/team--05.png" alt="" class="avatar"  />
+              <h3>Nolan Nitro</h3>
+              <p>Senior Developer</p>
+            </div><!--/5-->
+            <div>
+              <img src="img/team-members/team--06.png" alt="" class="avatar"  />
+              <h3>Donna Danger</h3>
+              <p>Senior Developer</p>
+            </div><!--/6-->
+            <div>
+              <img src="img/team-members/team--07.png" alt="" class="avatar"  />
+              <h3>Rebecca Roo</h3>
+              <p>Senior Designer</p>
+            </div><!--/7-->
+            <div>
+              <img src="img/team-members/team--08.png" alt="" class="avatar"  />
+              <h3>Lenny Lowes</h3>
+              <p>Senior Designer</p>
+            </div><!--/8-->
+            <div>
+              <img src="img/team-members/team--09.png" alt="" class="avatar"  />
+              <h3>Eli Elfs</h3>
+              <p>Designer</p>
+            </div><!--/9-->
+            <div>
+              <img src="img/team-members/team--10.png" alt="" class="avatar"  />
+              <h3>Trevor Tuesday</h3>
+              <p>Junior Developer</p>
+            </div><!--/10-->
+            <div>
+              <img src="img/team-members/team--11.png" alt="" class="avatar"  />
+              <h3>Tori Traffic</h3>
+              <p>Project Mangagement</p>
+            </div><!--/11-->
+            <div>
+              <img src="img/team-members/team--12.png" alt="" class="avatar"  />
+              <h3>Fido Fur</h3>
+              <p>Office Manager</p>
+            </div><!--/12-->
+           </div>
+		</section>
+
+		<footer>
+			<p>
+				Posted by: Kenny Kadilov
+			</p>
+			<p>
+				&copy; Copyright 2015 All rights reserved.
+			</p>
+		</footer>
+		
+		
+		
+		<!-- jQuery -->
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+		  
+		<script src="js/slick/slick.min.js"></script>
+		<script>
+      $('.slides').slick({
+        dots: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+      });
+      </script>
+		<!-- Custom Theme JavaScript -->
+		
+
+	</body>
+</html>
+

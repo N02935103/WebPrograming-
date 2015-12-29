@@ -1,0 +1,8 @@
+header{
+
+height: 100%;
+	 background: url(file/background-running.jpg) no-repeat top fixed;
+	 -webkit-background-size: cover;
+  background-size: cover;
+  padding:5px;
+}

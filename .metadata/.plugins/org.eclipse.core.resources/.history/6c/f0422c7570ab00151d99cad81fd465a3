@@ -1,0 +1,216 @@
+/* =============================================== *\
+	HTML5 VIDEO BACKGROUND
+	This is the important part
+	It can be used for a 'hero' section or a
+	full-screen background
+\* =============================================== */
+/* This first class is not necessary for full-screen backgrounds */
+.video-hero {
+	position: relative;
+	overflow: hidden;
+}
+.video-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+	    	background-size: cover;
+}
+.video-bg video {
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	   -moz-transform: translate(-50%,-50%);
+	    	transform: translate(-50%,-50%);
+}
+	/**
+	 * For full-screen video backgrounds, add the
+	 * .video-bg--fullscreen class to .video-bg div
+	 */
+	.video-bg--fullscreen {
+		position: fixed;
+	}
+.video-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	pointer-events: none; /* Allows right click menu on the video */
+	background: rgba(0,0,0,0.5); /* You can play with the opacity */
+}
+/**
+ * This part should be set separately for each video
+ * if there are multiple videos in your site.
+ * I.e. '.demo-video' is the name of the video
+ */
+.video-bg.demo-video {
+	background-image: url(files/office-people-working.jpg);
+}
+/**
+ * Fade in videos
+ * Note the .js class - so non js users still
+ * see the video
+ */
+.js .video-bg video {
+	opacity: 0;
+	-webkit-transition: opacity .8s linear;
+	   -moz-transition: opacity .8s linear;
+	    	transition: opacity .8s linear;
+}
+.js .video-bg video.is-playing {
+	opacity: 1;
+}
+
+/* =============================================== *\
+	HTML5 VIDEO HERO
+	You don't need to copy this, but you might
+	draw some inspiration from it
+\* =============================================== */
+.video-hero {
+	height: 480px; /* Feel free to set a height in your own way */
+}
+.video-hero--content {
+	position: relative;
+	text-align: center;
+	margin-top: 200px;
+	color: #FFF;
+	text-shadow: 0 0 5px rgba(0,0,0,0.4);
+}
+
+/* =============================================== *\
+	OTHER STUFF - no need to copy this
+\* =============================================== */
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+	color: #666;
+}
+a {
+	text-decoration: none;
+	color: #a46497;
+}
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+.cf:after {
+    clear: both;
+}
+.page-width {
+	width: 92%;
+	max-width: 960px;
+	margin: 0 auto;
+}
+#container {
+	width: 960px;
+	margin: 100px auto;
+	background: rgba(255,255,255,0.6);
+	position: relative;
+	z-index: 1;
+}
+#header {
+	background: #2c2d33;
+	padding: 2em 0;
+}
+#header a {
+	color: #FFF;
+}
+.title {
+	display: block;
+	font-weight: bold;
+	font-size: 18px;
+}
+.subtitle {
+	display: block;
+	font-weight: normal;
+	font-size: 15px;
+	color: #959699;
+}
+a:hover .subtitle {
+	color: #FFF;
+}
+#site-title {
+	float: left;
+	margin: 0;
+}
+#menu {
+	float: right;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+#menu li {
+	margin: 0;
+	padding: 0 15px;
+	display: inline-block;
+}
+.video-hero--content h2 {
+	font-size: 34px;
+	margin: 0 0 10px;
+}
+.video-hero--content p {
+	font-size: 20px;
+	margin: 0;
+}
+#content {
+	padding: 40px 0;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #fff6af;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #fff6af;
+	box-shadow:inset 0px 1px 0px 0px #fff6af;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+	background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+	background-color:#ffec64;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+	background-color:#ffab23;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+

@@ -1,0 +1,3 @@
+header video{
+	max-height:500px;
+}
