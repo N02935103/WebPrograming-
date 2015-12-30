@@ -1,0 +1,19 @@
+$('.navbar').sticky({
+  
+  responsiveWidth: true
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
