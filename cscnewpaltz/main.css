@@ -342,7 +342,12 @@ ul li {
    background-color: transparent;
    background: transparent;
    border-color: transparent;
+   transition: 1s;
 }
+
+
+
+
 .navbar li { color: white } 
 
 .navbar-nav>li>a {
@@ -364,6 +369,25 @@ ul li {
   .navbar-default .navbar-brand {
     color: white;
 }
+
+.is-sticky header{
+	 z-index:2;
+	 style:none;
+	 background-color: black;
+	 background: black;
+	 border-color: black;	  
+
+}
+
+ .is-sticky header .navbar-collapse{
+	 background-color: black;
+	 background: black;
+	 border-color: black;
+	  transition:1s;
+
+}
+
+
 
 
 
